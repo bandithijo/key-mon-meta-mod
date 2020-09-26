@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# source: https://github.com/bandithijo/key-mon-meta-mod
+
 list_theme = `ls -1d */`.gsub("\/", '').split("\n")
 
 ['sample'].each do |exclude|
