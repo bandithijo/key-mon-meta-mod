@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
 
-# source: https://github.com/bandithijo/key-mon-meta-mod
+# This is a Ruby wraper script for change the Meta/Super key logo of your
+# Key-mon. You can choose your Meta modification style with this installation
+# script install.rb.
+# source  : https://github.com/bandithijo/key-mon-meta-mod
+# author  : bandithijo@gmail.com
+# created : 2020/09/27
 
 list_theme = `ls -1d */`.gsub("\/", '').split("\n")
 
