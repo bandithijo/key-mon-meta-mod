@@ -2,6 +2,10 @@
 
 list_theme = `ls -1d */`.gsub("\/", '').split("\n")
 
+['sample'].each do |exclude|
+  list_theme.delete(exclude)
+end
+
 puts 'Select your Key-mon theme!'
 list_theme.each_with_index do |theme, index|
   puts " (#{index + 1}) #{theme.capitalize}"
