@@ -16,12 +16,12 @@ selected_theme = gets.chomp
 selected_theme_name = list_theme[selected_theme.to_i - 1]
 
 Dir.chdir(selected_theme_name)
-puts "\nKamu berada di dalam direktori #{selected_theme_name.capitalize}"
+puts "\nYou are in #{selected_theme_name.capitalize} directory"
 
 unless `ls -p | grep -v /`.empty?
   list_style = `ls -p | grep -v /`.split("\n")
 else
-  puts "\nTidak ada style di dalam direktori ini"
+  puts "\nThere are no style in this directory"
   exit
 end
 
@@ -37,20 +37,19 @@ selected_style_name = list_style[selected_style.to_i - 1]
 
 keymon_dir = '/usr/lib/python3.8/site-packages/keymon/themes'
 
-puts "\nKamu memilih style: #{selected_style_name}"
+puts "\nYou choose: #{selected_style_name}"
 
-puts "\nApakah kamu siap untuk melakukan instalasi style? [y/n]"
+puts "\nAre you sure want to change the style? [y/n]"
 print '=> '
 agreement = gets.chomp
 if %w[y Y].include? agreement
-  puts "\nAyo kita install!"
+  puts "\nLet's party!"
   puts
   system "sudo cp -vf #{selected_style_name} \
                       #{keymon_dir}/#{selected_theme_name}/meta.svg"
-  puts "\nProses instalasi SELESAI!"
+  puts "\nInstallation COMPLETED!"
 elsif %w[n N].include? agreement
-  puts "\nAh, Mungkin lain kali"
+  puts "\nAh, Maybe later"
 else
-  puts "\nKamu tidak memasukkan jawaban yang benar"
+  puts "\nYou are not enter the correct answer"
 end
-# system 'sudo cp -vf'
