@@ -7,9 +7,28 @@
 # author  : bandithijo@gmail.com
 # created : 2020/09/27
 
+puts "\nThis installation script will ask
+your administrator password with sudo."
+puts "\nAre you agree with that? [y/n]"
+print '=> '
+continue = gets.chomp
+if %w[y Y].include? continue
+  return
+elsif %w[n N].include? continue
+  puts "Ok. It's fine"
+  exit
+else
+  puts 'You enter wrong answer'
+  exit
+end
+
 # Please take a look a installation path of your keymon.
 # It probably difference with my own system.
-keymon_dir = '/usr/lib/python3.8/site-packages/keymon/themes'
+python_lib_path = `sudo python -c "import sys; print(sys.path[4])"`
+keymon_dir = python_lib_path.strip << '/keymon/themes'
+
+puts "\nYour Key-Mon installation directory is on:
+#{keymon_dir.sub('/themes', '')}"
 
 list_theme = `ls -1d */`.gsub("\/", '').split("\n")
 
@@ -17,7 +36,7 @@ list_theme = `ls -1d */`.gsub("\/", '').split("\n")
   list_theme.delete(exclude)
 end
 
-puts 'Select your Key-mon theme!'
+puts "\nSelect your Key-mon theme!"
 list_theme.each_with_index do |theme, index|
   puts " (#{index + 1}) #{theme.capitalize}"
 end
