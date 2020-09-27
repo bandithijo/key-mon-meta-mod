@@ -7,6 +7,10 @@
 # author  : bandithijo@gmail.com
 # created : 2020/09/27
 
+# Please take a look a installation path of your keymon.
+# It probably difference with my own system.
+keymon_dir = '/usr/lib/python3.8/site-packages/keymon/themes'
+
 list_theme = `ls -1d */`.gsub("\/", '').split("\n")
 
 ['sample'].each do |exclude|
@@ -41,8 +45,6 @@ puts "\nEnter style number"
 print '=> '
 selected_style = gets.chomp
 selected_style_name = list_style[selected_style.to_i - 1]
-
-keymon_dir = '/usr/lib/python3.8/site-packages/keymon/themes'
 
 puts "\nYou choose: #{selected_style_name}"
 
