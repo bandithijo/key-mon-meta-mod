@@ -7,21 +7,6 @@
 # author  : bandithijo@gmail.com
 # created : 2020/09/27
 
-puts "\nThis installation script will ask
-your administrator password with sudo."
-puts "\nAre you agree with that? [y/n]"
-print '=> '
-continue = gets.chomp
-if %w[y Y].include? continue
-  return
-elsif %w[n N].include? continue
-  puts "Ok. It's fine"
-  exit
-else
-  puts 'You enter wrong answer'
-  exit
-end
-
 # Please take a look a installation path of your keymon.
 # It probably difference with my own system.
 python_lib_path = `sudo python -c "import sys; print(sys.path[4])"`
