@@ -12,18 +12,20 @@ $ ./install.rb
 
 ## Available theme
 
-**Currently, only oblivion theme available**.
+Currently, only **oblivion** & **modern** theme available.
 
 ![](./sample/smaple.png)
 
-You can add your own style and `install.rb` will read your style automaticaly.
+You can add your own meta key style on each theme directory and `install.rb` will read your style automaticaly.
+
+## Style
+
+There are **meta_00.svg** on each directory theme. It is a default meta key logo.
 
 
 > **Note!**
-> <br>If you want to create another directory for theme, please follow the key-mon theme directory name.
-> <br>`/usr/lib/python3.8/site-packages/keymon/themes/`
-> <br>`apple`, `big-letters`, `classic`, `clear`, `clear-command`, `clear-ubuntu`, `modern`, `oblivion`, `oblivion-slim`
-> <br>Do not create your own theme. Because the installation script will not work.
+> Do not create your own directory theme. Because the installation script will not work.<br>
+> This script will using theme directory as a target to copy.
 
 ## Contribution
 
