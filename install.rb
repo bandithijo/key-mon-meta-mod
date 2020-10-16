@@ -10,8 +10,9 @@
 begin
   # Please take a look a installation path of your keymon.
   # It probably difference with my own system.
-  python_lib_path = `sudo python -c "import sys; print(sys.path[4])"`
-  keymon_dir = python_lib_path.strip << '/keymon/themes'
+  # python_lib_path = `sudo python -c "import sys; print(sys.path[4])"`
+  # keymon_dir = python_lib_path.strip << '/keymon/themes'
+  keymon_dir = '/usr/lib/python2.7/site-packages/keymon/themes'
 
   puts "\nYour Key-Mon installation directory is on:
   #{keymon_dir.sub('/themes', '')}"
